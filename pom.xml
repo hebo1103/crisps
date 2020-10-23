@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!--<parent>-->
+        <!--<groupId>net.crisps.framework.tac.service</groupId>-->
+        <!--<artifactId>crisps-framework-service-parent</artifactId>-->
+        <!--<version>Cenozoic.SR2</version>-->
+    <!--</parent>-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.3.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>net.crisps.cloud.framework</groupId>
+    <artifactId>crisps-cloud-framework</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>${project.artifactId}</name>
+    <description>crisps-cloud-framework</description>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <guava.version>20.0</guava.version>
+        <logstash-gelf.version>1.14.1</logstash-gelf.version>
+        <spring-boot.version>2.2.10.RELEASE</spring-boot.version>
+        <spring-boot-admin.version>2.3.0</spring-boot-admin.version>
+        <spring-cloud.version>Hoxton.SR4</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
+        <discovery-dependencies.version>6.0.8-SNAPSHOT</discovery-dependencies.version>
+        <nacos-framework-starter.version>2.0.0-SNAPSHOT</nacos-framework-starter.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <resource.delimiter>#</resource.delimiter>
+        <elasticsearch.version>7.9.1</elasticsearch.version>
+        <curator.version>5.1.0</curator.version>
+        <crisps-framework-dependencies.version>Cenozoic-SNAPSHOT</crisps-framework-dependencies.version>
+    </properties>
+    <modules>
+        <module>crisps-cloud-framework-cache</module>
+        <module>crisps-cloud-framework-core</module>
+        <module>crisps-cloud-framework-web</module>
+        <module>crisps-cloud-framework-canal</module>
+        <module>crisps-cloud-framework-elasticsearch-orm</module>
+        <module>crisps-cloud-framework-mybatis-orm</module>
+        <module>crisps-cloud-framework-thirdparty</module>
+        <module>crisps-cloud-framework-concurrent</module>
+    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>28.2-jre</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.crisps.framework.tac.starter</groupId>
+            <artifactId>swagger-framework-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+
+        <!-- 混沌工程 -->
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>chaos-monkey-spring-boot</artifactId>
+        </dependency>
+
+        <!-- json工具 -->
+        <dependency>
+            <groupId>net.dgg.framework.tac</groupId>
+            <artifactId>dgg-framework-json</artifactId>
+        </dependency>
+
+        <!-- http工具 -->
+        <dependency>
+            <groupId>net.dgg.framework.tac</groupId>
+            <artifactId>dgg-framework-http</artifactId>
+        </dependency>
+
+        <!-- 工具包 -->
+        <dependency>
+            <groupId>net.dgg.framework.tac</groupId>
+            <artifactId>dgg-framework-tools</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>net.crisps.framework.tac.starter</groupId>
+            <artifactId>basis-framework-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>net.crisps.framework.tac.starter</groupId>
+            <artifactId>client-framework-starter</artifactId>
+        </dependency>
+
+        <!-- 日志包 -->
+        <dependency>
+            <groupId>net.crisps.framework.tac.starter</groupId>
+            <artifactId>logging-framework-starter</artifactId>
+        </dependency>
+
+        <!-- nacos 多配置文件管理 -->
+        <dependency>
+            <groupId>net.crisps.framework.tac.starter</groupId>
+            <artifactId>nacos-framework-starter</artifactId>
+        </dependency>
+
+        <!-- 策略组件 -->
+        <dependency>
+            <groupId>net.crisps.framework.tac.starter</groupId>
+            <artifactId>strategy-framework-starter</artifactId>
+        </dependency>
+
+        <!-- 灰度组件 -->
+        <dependency>
+            <groupId>net.crisps.framework.tac.starter</groupId>
+            <artifactId>discovery-framework-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.nepxion</groupId>
+            <artifactId>discovery-plugin-strategy-starter-service</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.nepxion</groupId>
+            <artifactId>discovery-plugin-starter-eureka</artifactId>
+        </dependency>
+
+        <!--灰度发布组件 Discovery begin -->
+        <!--
+          ~ 基于开源组件Discovery做的二次开发
+          ~ https://github.com/Nepxion/Discovery
+        -->
+        <dependency>
+            <groupId>com.nepxion</groupId>
+            <artifactId>discovery-plugin-config-center-starter-nacos</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.nepxion</groupId>
+            <artifactId>discovery-plugin-config-center</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.nepxion</groupId>
+            <artifactId>discovery-plugin-strategy-starter-hystrix</artifactId>
+        </dependency>
+        <!--灰度发布组件 Discovery end -->
+
+        <!-- 统一配置中心  Nacos -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+
+        <!-- spring cloud 健康检查 -->
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+        </dependency>
+
+        <!-- RPC调用组件 Feign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+        <!-- 链路跟踪组件 zipkin -->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.cloud</groupId>-->
+        <!--            <artifactId>spring-cloud-starter-zipkin</artifactId>-->
+        <!--        </dependency>-->
+
+        <!-- 日志中心组件 -->
+        <dependency>
+            <groupId>biz.paluch.logging</groupId>
+            <artifactId>logstash-gelf</artifactId>
+        </dependency>
+
+        <!--解决Netflix底层组件guava的交错依赖-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.8</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <!--执行package构建时执行打包源代码的构建-->
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <url>http://192.168.254.62:8081/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <url>http://192.168.254.62:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>
